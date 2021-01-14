@@ -3,13 +3,9 @@ const router = express.Router();
 
 const Blog = require("../models/blogs");
 
-router.get("/blogs/create", async (req, res) => {
-  try {
-    await res.render("create", { title: "Create a new blog" });
-    console.log("******* here");
-  } catch (error) {
-    console.log(error);
-  }
+router.get("/blogs/create", (req, res) => {
+  res.render("create", { title: "Create a new blog" });
+  console.log("******* here");
 });
 router.get("/blogs/:id", async (req, res) => {
   try {
