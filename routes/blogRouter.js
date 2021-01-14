@@ -14,6 +14,7 @@ router.get("/blogs/:id", async (req, res) => {
     console.log(result);
   } catch (error) {
     console.log(error);
+    res.status(404).render("404", { title: "404" });
   }
 });
 router.get("/blogs", async (req, res) => {
